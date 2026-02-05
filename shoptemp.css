@@ -527,8 +527,8 @@ footer p {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 40%;
+    left: -100%;
+    width: 50%;
     height: 100vh;
     background: rgba(255, 255, 255, 0.063);
     backdrop-filter: blur(8px);
@@ -542,7 +542,7 @@ footer p {
   }
   
   .nav-links.active {
-    right: 0;
+    left: 0;
   }
   
   .nav-links li a {
@@ -676,3 +676,4 @@ footer p {
 ::-webkit-scrollbar-thumb:hover {
   background: #b8943c;
 }
+
