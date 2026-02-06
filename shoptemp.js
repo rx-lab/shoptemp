@@ -40,6 +40,50 @@ next.addEventListener("click", () => {
 prev.addEventListener("click", () => {
   slider.scrollLeft -= 300;
 })
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".btn-accent");
+  const container = document.getElementById("animation-container");
+
+  if (!container) return;
+
+  const animation = lottie.loadAnimation({
+    container: container,
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: "./icons/bag.json"
+  });
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault(); // جلوگیری از رفتن لینک
+      animation.goToAndPlay(0, true);
+    });
+  });
+});
+
+// لود انیمیشن لودینگ
+const loaderAnim = lottie.loadAnimation({
+  container: document.getElementById("loader-animation"),
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "./icons/loading.json"
+});
+
+// مخفی شدن لودینگ بعد از لود کامل صفحه
+window.addEventListener("load", () => {
+  const loader = document.getElementById("site-loader");
+
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 300); // fade نرم
+});
+
+
+
+
+
 
 
 
