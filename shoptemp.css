@@ -593,7 +593,7 @@ footer p {
     z-index: 6;
     align-items:flex-start;
     justify-content:start;
-    padding: 15px;;
+    padding: 10px;;
     box-shadow: 5px 0 20px rgba(0,0,0,0.1);
     overflow-y: auto;
   }
@@ -746,3 +746,4 @@ footer p {
 ::-webkit-scrollbar-thumb:hover {
   background: #b8943c;
 }
+
