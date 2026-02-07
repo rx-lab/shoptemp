@@ -21,6 +21,7 @@ body {
   margin: auto;
   padding: 0 1rem;
 }
+
 /* loader */
 #site-loader {
   position: fixed;
@@ -29,7 +30,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  z-index: 9999;
 }
 
 #site-loader.hide {
@@ -44,13 +45,11 @@ body {
   height: 80px;
 }
 
-
-
 /* ================= Header ================= */
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 2;
   background: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
@@ -70,6 +69,7 @@ header .container {
   color: #000;
   transition: 0.3s ease;
   text-decoration: none;
+  opacity: 0;
 }
 
 .logo:hover {
@@ -78,18 +78,22 @@ header .container {
 }
 
 /* ================= Navigation ================= */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
-  align-items: center;
 }
 
 .nav-links li a {
   color: #1C1917;
   text-decoration: none;
   font-weight: 500;
-  padding: 8px 16px;
   border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;
@@ -113,13 +117,19 @@ header .container {
   height: 2px;
   background-color: #C8A24D;
 }
-#animation-container svg{
+
+/* آیکون bag در دسکتاپ */
+#animation-container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#animation-container svg {
   width: 30px !important;
+  height: 30px !important;
 }
-#animation-container svg:hover{
-  background: transparent !important;
-  background-color: transparent !important;
-}
+
 /* ================= Hamburger ================= */
 .hamburger {
   display: none;
@@ -156,7 +166,7 @@ header .container {
   inset: 0;
   background: rgba(0,0,0,0.5);
   display: none;
-  z-index: 999;
+  z-index: 99;
 }
 
 .nav-overlay.active {
@@ -280,14 +290,13 @@ header .container {
   box-shadow: 0 5px 15px rgba(184, 148, 60, 0.3);
 }
 
-.card .btn-accent del {
+.card .btn-accent price {
   font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
   background: rgba(255,255,255,0.15);
   padding: 4px 12px;
   border-radius: 6px;
-
 }
 
 /* ================= Slider Section ================= */
@@ -303,7 +312,7 @@ header .container {
   color: #1C1917;
   margin-bottom: 40px;
   position: relative;
-    text-decoration-thickness:3px ;
+  text-decoration-thickness: 3px;
 }
 
 .section-title::after {
@@ -367,7 +376,7 @@ header .container {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-card
+
 .product-slider::-webkit-scrollbar {
   display: none;
 }
@@ -433,7 +442,7 @@ card
 }
 
 .slider-card a {
-  background:#C8A24D;
+  background: #C8A24D;
   color: white;
   text-decoration: none;
   padding: 14px;
@@ -450,16 +459,16 @@ card
 }
 
 /* ================= Sorts Section ================= */
-.sorth2{
+.sorth2 {
   display: inline-block;
   text-align: center;
   display: flex;
   justify-content: center;
   margin-bottom: 60px;
   text-decoration: #C8A24D underline;
-  text-underline-offset:20px;
+  text-underline-offset: 20px;
   font-size: 2.2rem;
-  text-decoration-thickness:2px ;
+  text-decoration-thickness: 2px;
 }
 
 .sorts {
@@ -503,7 +512,7 @@ card
   bottom: 30px;
   right: 30px;
   color: white;
-  background:rgba(0, 0, 0, 0.408);
+  background: rgba(0, 0, 0, 0.408);
   backdrop-filter: blur(8px);
   padding: 12px 24px;
   border-radius: 10px;
@@ -552,30 +561,56 @@ footer p {
   .hamburger {
     display: flex;
   }
-  
+
+  /* آیکون bag در موبایل کنار همبرگر */
+  #animation-container {
+    display: block;
+    order: 2;
+  }
+
+  #animation-container svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .hamburger {
+    order: 3;
+  }
+
+  /* منوی موبایل */
   .nav-links {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 50%;
+    width: 70%;
+    max-width: 300px;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     gap: 30px;
-    transition: 0.5s ease;
-    z-index: 2;
-    align-items: flex-end;
-    padding: 15px;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: left 0.4s ease;
+    z-index: 100;
+    align-items: flex-start;
+    padding: 100px 30px 30px 30px;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+    overflow-y: auto;
   }
   
   .nav-links.active {
     left: 0;
   }
   
+  .nav-links li {
+    width: 100%;
+  }
+
   .nav-links li a {
     font-size: 1.2rem;
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
   }
   
   .banner {
@@ -627,6 +662,11 @@ footer p {
   
   .logo {
     font-size: 1.5rem;
+  }
+
+  .nav-links {
+    width: 80%;
+    padding: 80px 20px 20px 20px;
   }
   
   .banner {
@@ -705,8 +745,3 @@ footer p {
 ::-webkit-scrollbar-thumb:hover {
   background: #b8943c;
 }
-
-
-
-
-
