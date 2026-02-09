@@ -1136,23 +1136,6 @@ footer {
 }
 
 /* ===============================================
-   DARK MODE BUTTON
-   =============================================== */
-#dark-mode {
-  color: var(--primary-color);
-  padding: 5px;
-  border: 2px solid var(--primary-color);
-  background-color: var(--white);
-  font-size: 1.2rem;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-/* ===============================================
    AUTH PAGE (Sign In / Sign Up)
    =============================================== */
 .auth-body {
@@ -1736,3 +1719,4 @@ padding: 20px;
     align-items: flex-start;
   }
 }
+
