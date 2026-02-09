@@ -11,7 +11,7 @@ It is designed for small online stores, landing pages, and front-end practice pr
 ---
 
 ## Preview
-![ShopTemp Preview](img/1.jpg)
+![ShopTemp Preview]()
 
 ---
 
